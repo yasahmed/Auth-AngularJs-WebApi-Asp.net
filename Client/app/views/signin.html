@@ -1,0 +1,41 @@
+<div class="NoneBlock">
+</div>
+
+<div class="col-centered formOpacity" >
+  <h4 class="formTitle">Sign In</h4>
+  <form>
+       <div class="form-group">
+
+        <div ng-show = "showLoader" class="loader">
+		</div>
+        <div  class="divError" data-ng-hide="message == '' || showLoader" >
+           {{message}}
+        </div>
+
+         <label for="InputUsername">Username</label>
+
+         <div class="input-group">
+         <input type="text" class="form-control customInput" name="InputUsername" placeholder="Your username ..." data-ng-model="loginData.userName" required autofocus/>
+         </div>
+
+
+         <label for="InputPassword" class="BrTop">Password</label>
+
+         <div class="input-group">
+         <input type="password" class="form-control customInput" name="InputPassword" placeholder="Your password ..."  data-ng-model="loginData.password" required/>
+         </div>
+
+       </div>
+
+
+         <button type="submit" class="submitForm" data-ng-click="login()">Log in</button>
+  </form>
+
+   <div class="LinkContainer">
+     <a  href="/#/fogetpass" class="linkL" >Forgot my password ?</a> <a href="/#/signup" class="linkR">Sign Up </a>
+   </div>
+
+</div>
+
+
+

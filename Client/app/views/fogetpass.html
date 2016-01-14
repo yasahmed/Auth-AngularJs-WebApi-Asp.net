@@ -1,0 +1,33 @@
+<div class="NoneBlock">
+</div>
+
+<div class="col-centered formOpacity" >
+  <h4 class="formTitle">Recover my password</h4>
+  <form>
+       <div class="form-group">
+	   
+	    <div ng-show = "showLoader" class="loader">
+		</div>  
+		
+          <div data-ng-hide="message == '' || showLoader" data-ng-class="(sentSuccessfully) ? 'divGood' : 'divError'">
+            {{message}}
+         </div>
+
+         <label for="InputUsername">Email</label>
+
+         <div class="input-group">
+         <input type="text" class="form-control customInput" name="InputUsername" placeholder="Your Email ..."  data-ng-model="recover.email" required autofocus />
+         </div>
+
+
+       </div>
+
+
+         <button type="submit" class="submitForm"  data-ng-click="getbackmypass()">Get back my password</button>
+  </form>
+
+   <div class="LinkContainer">
+     <a href="/#/signin" class="linkL" >Sign in ?</a> <a href="/#/signup" class="linkR">Sign Up </a>
+   </div>
+
+</div>

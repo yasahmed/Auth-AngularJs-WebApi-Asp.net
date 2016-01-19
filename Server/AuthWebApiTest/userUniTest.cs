@@ -14,61 +14,60 @@ namespace AuthWebApiTest
     [TestClass]
     public class userUniTest
     {
-        //private UserService _UserService = null;
+        private UserService _UserService = null;
+       public userUniTest()
+        {
+            System.Data.Entity.Database.SetInitializer<MyDbContext>(new DropCreateDatabaseIfModelChanges<MyDbContext>());
+            _UserService = new UserService();
+        }
 
-        //public userUniTest()
-        //{
-        //    System.Data.Entity.Database.SetInitializer<MyDbContext>(new DropCreateDatabaseIfModelChanges<MyDbContext>());
-        //    _UserService = new UserService();
-        //}
-
-        //[TestMethod]
-        //public void checkUserCase1()
-        //{
+        [TestMethod]
+        public void checkUserCase1()
+        {
            
 
-        //    //Test Successful Login
-        //    AuthWebApiKios.RequestModels.UserAuthModel user = new AuthWebApiKios.RequestModels.UserAuthModel
-        //    {
-        //        Password = "eessaouira",
-        //        UserName = "eessaouira"
-        //    };
-        //    var result_user = _UserService.CheckUser(user);
-        //    Assert.IsNotNull(result_user);
-        //}
+            //Test Successful Login
+            AuthWebApiKios.RequestModels.UserAuthModel user = new AuthWebApiKios.RequestModels.UserAuthModel
+            {
+                Password = "eessaouira",
+                UserName = "eessaouira"
+            };
+            var result_user = _UserService.CheckUser(user);
+            Assert.IsNotNull(result_user);
+        }
 
-        //[TestMethod]
-        //public void checkUserCase2()
-        //{
+        [TestMethod]
+        public void checkUserCase2()
+        {
            
 
-        //    //Test Successful Login
-        //    AuthWebApiKios.RequestModels.UserAuthModel user = new AuthWebApiKios.RequestModels.UserAuthModel
-        //    {
-        //        Password = "error",
-        //        UserName = "error"
-        //    };
-        //    var result_user = _UserService.CheckUser(user);
-        //    Assert.IsNull(result_user);
-        //}
+            //Test Successful Login
+           AuthWebApiKios.RequestModels.UserAuthModel user = new AuthWebApiKios.RequestModels.UserAuthModel
+            {
+                Password = "error",
+                UserName = "error"
+            };
+            var result_user = _UserService.CheckUser(user);
+            Assert.IsNull(result_user);
+        }
 
-        //[TestMethod]
-        //public void getUserByEmail()
-        //{
-        //    //Test Get User By Id
+        [TestMethod]
+        public void getUserByEmail()
+        {
+            //Test Get User By Id
 
-        //    var result_user = _UserService.getByEmail("jnah.ahmed@gmail.com");
-        //    Assert.IsNotNull(result_user);
-        //}
+            var result_user = _UserService.getByEmail("jnah.ahmed@gmail.com");
+            Assert.IsNotNull(result_user);
+        }
 
-        ////[TestMethod]
-        ////public void RecoverPassword()
-        ////{
-        ////    //Test Get User By Id
+        [TestMethod]
+        public void RecoverPassword()
+        {
+            //Test Get User By Id
 
-        ////    var result_user = _UserService.RecoverMyPassword("jnah.ahmed@gmail.com");
-        ////    Assert.IsTrue(result_user);
-        ////}
+            var result_user = _UserService.RecoverMyPassword("jnah.ahmed@gmail.com");
+            Assert.IsTrue(result_user);
+        }
 
 
         
